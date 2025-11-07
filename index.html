@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Você é machão?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 500px;
+      margin: 40px auto;
+      line-height: 1.5;
+      background: linear-gradient(135deg, #e0e0e0, #f5f5f5, #ffffff);
+      padding: 20px;
+      border-radius: 15px;
+    }
+    .resultado {
+      margin-top: 20px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      display: none;
+      color: #ff4fa3;
+      text-shadow: 0 0 10px #ffb3d9;
+      animation: brilho 1s infinite alternate;
+      text-align: center;
+    }
+
+    @keyframes brilho {
+      from { text-shadow: 0 0 5px #ff7ab8; }
+      to { text-shadow: 0 0 15px #ff4fa3; }
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: linear-gradient(135deg, #ff7acb, #ff94d9);
+      color: white;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <h2>Você é machão?</h2>
+  <form id="formulario">
+    <label>Quantos anos tu tem?</label><br>
+    <input type="number" name="idade" required><br><br>
+
+    <label>Qual sua altura?</label><br>
+    <input type="text" name="altura" required><br><br>
+
+    <label>Qual sua cor preferida?</label><br>
+    <input type="text" name="cor" required><br><br>
+
+    <label>O Cezilho é seu barbeiro?</label><br>
+    <input type="text" name="time" required><br><br>
+
+    <label>Qual estilo musical?</label><br>
+    <input type="text" name="musica" required><br><br>
+
+    <button type="submit">Enviar</button>
+  </form>
+
+  <div id="resultado" class="resultado">Verifiquei aqui e o eu barbeiro é visagista... Então, Você é bem GAY kkkkkkkkkk</div>
+
+  <script>
+    const form = document.getElementById('formulario');
+    const resultado = document.getElementById('resultado');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      resultado.style.display = 'block';
+    });
+  </script>
+</body>
+</html>
