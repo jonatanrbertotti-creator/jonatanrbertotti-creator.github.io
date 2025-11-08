@@ -174,8 +174,8 @@
   <div class="container">
     <form id="formulario">
 
-      <label>Qual sua altura?</label>
-      <input type="text" name="altura" placeholder="Ex: 1.80m" required><br>
+      <label>Qual é seu nome?</label>
+      <input type="text" name="nome" id="nome" placeholder="Ex: João Silva" required><br>
 
       <label>Qual sua cor preferida?</label>
       <input type="text" name="cor" placeholder="Ex: Azul" required><br>
@@ -196,6 +196,7 @@
     form.addEventListener('submit', function(event) {
       event.preventDefault();
       
+      const nome = document.getElementById('nome').value.trim();
       const resposta = document.querySelector('input[name="barbeiro"]').value.toLowerCase().trim();
       
       let mensagem = '';
@@ -203,15 +204,15 @@
       let classe = '';
 
       if (resposta === 'sim') {
-        mensagem = 'Verifiquei aqui e o eu barbeiro é visagista... Então, Você é bem GAY kkkkkkkkkk';
+        mensagem = `Verifiquei aqui e o seu barbeiro é visagista... Então, ${nome}, Você é bem GAY kkkkkkkkkk`;
         emoji = '💇‍♂️';
         classe = 'sim';
       } else if (resposta === 'não' || resposta === 'nao') {
-        mensagem = 'Você é gay mas não tanto.. Já é um começo o barbeiro não ser Visagista... kkkk';
+        mensagem = `${nome}, Você é gay mas não tanto.. Já é um começo o barbeiro não ser Visagista... kkkk`;
         emoji = '😏';
         classe = 'nao';
       } else {
-        mensagem = 'Opa, responde com "Sim" ou "Não" aí, meu!';
+        mensagem = `${nome}, Opa, responde com "Sim" ou "Não" aí, meu!`;
         emoji = '❓';
         classe = 'nao';
       }
